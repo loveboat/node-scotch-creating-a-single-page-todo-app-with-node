@@ -1,10 +1,11 @@
 var 
   express = require('express'),
-  mongoose = require('mongoose');
+  mongoose = require('mongoose'),
+  database = require('./config/database')
   
 app = express();
 
-mongoose.connect('mongodb://localhost:27017/single-page-todo');
+mongoose.connect(database.url);
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.logger('dev'));
