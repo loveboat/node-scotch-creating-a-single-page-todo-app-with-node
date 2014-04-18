@@ -12,12 +12,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 
-// define model
-var Todo = mongoose.model('Todo', {
-  text : String
-});
-
-
+var Todo = require('./app/models/todo');
 
 // API routes
 
