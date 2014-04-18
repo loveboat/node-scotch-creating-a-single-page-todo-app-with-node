@@ -11,6 +11,11 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 
+// define model
+var Todo = mongoose.model('Todo', {
+  text : String
+});
+
 app.listen(8080, function() {
   console.log("App listening on port 8080");  
 });
